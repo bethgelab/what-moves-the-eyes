@@ -1,0 +1,13 @@
+tags:
+- models/pseudo_crossvalidated_goldstandard/COCO-Freeview/validation/v1.0.0
+- models/pseudo_crossvalidated_goldstandard/COCO-Freeview/validation
+- deepgaze-vs-scenewalk
+- mkuemmerer31
+- galvani
+- autoslurm
+- autoslurm:restart_failed
+
+projects:
+- deepgaze-vs-scenewalk
+
+path: deepgaze-vs-scenewalk/models/pseudo_crossvalidated_goldstandard/COCO-Freeview/validation

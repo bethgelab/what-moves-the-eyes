@@ -1,0 +1,40 @@
+dependencies:
+  - destination: container.sif
+    find_latest:
+      #$and:
+      tags:
+        $glob: containers/default/*
+      projects: deepgaze-vs-scenewalk
+    source: output/container.sif
+  - repository: https://github.com/matthias-k/pysaliency.git
+    branch: dev
+    destination: pysaliency
+  - repository: https://github.com/matthias-k/what-moves-the-eyes.git
+    destination: what-moves-the-eyes
+  - query: "#deepgaze-vs-scenewalk #datasets/COCO-Freeview"
+    source: output/COCO-Freeview
+    destination: pysaliency_datasets/COCO-Freeview
+
+  - find_latest:
+      $and:
+        - tags:
+            $glob: "models/centerbias/COCO-Freeview/validation/*"
+        - tags: "deepgaze-vs-scenewalk"
+    source: output/centerbias.hdf5
+    destination: centerbias.hdf5
+
+  - find_latest:
+      $and:
+        - tags:
+            $glob: "task0001_datasets/Combined_dataset/*"
+        - tags: "gaze-combined-datasets"
+    source: output
+    destination: combined_dataset
+
+  - find_latest:
+      $and:
+        - tags:
+            $glob: "experiments/2024-07-24_internalcrossval/combined_hdf5/*"
+        - tags: "gaze-combined-datasets"
+    source: output/full_validation_predictions.hdf5
+    destination: combined_dataset_spatial_deepgaze.hdf5

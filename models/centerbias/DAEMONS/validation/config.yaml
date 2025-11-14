@@ -1,0 +1,10 @@
+source_directory: 'centerbias_train'
+dataset:
+  stimuli: pysaliency_datasets/DAEMONS/stimuli_validation.hdf5
+  fixations: pysaliency_datasets/DAEMONS/fixations_validation.hdf5
+  filters:
+  - type: remove_out_of_stimulus_fixations
+  - type: filter_fixations_by_number
+    parameters:
+      intervals:
+      - [1, 1000]

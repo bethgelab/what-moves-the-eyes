@@ -1,0 +1,19 @@
+tags:
+- models/goldstandard/COCO-Freeview/validation/v1.0.0
+- models/goldstandard/COCO-Freeview/validation/v1
+- models/goldstandard/COCO-Freeview/validation
+- deepgaze-vs-scenewalk
+- mkuemmerer31
+- galvani
+- autoslurm
+- autoslurm:restart_failed
+
+projects:
+- deepgaze-vs-scenewalk
+
+origin: deepgaze-vs-scenewalk/models/goldstandard/COCO-Freeview/validation
+path: deepgaze-vs-scenewalk/models/goldstandard/COCO-Freeview/validation
+
+versions:
+- version: v1.0.0
+  comment: With spatial saliency model as additional mixture component

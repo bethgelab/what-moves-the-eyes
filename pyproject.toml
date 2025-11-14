@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools >= 77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepgaze_vs_scenewalk"
+version = "0.1.0"
+description = "What Moves the Eyes: Doubling Mechanistic Model Performance Using Deep Networks to Discover and Test Cognitive Hypotheses"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "equinox==0.11.8",
+    "hydra-core==1.3.2",
+    "jax==0.4.35",
+    "numpyro==0.15.3",
+    "opencv-contrib-python==4.5.5.62",
+    "optax==0.2.3",
+    "pandas>=2.3.3",
+    "pysaliency",
+    "pyyaml>=6.0.3",
+    "ruff>=0.14.5",
+    "scikit-learn==1.3.1",
+    "scipy==1.11.3",
+    "tensorboard>=2.20.0",
+    "torch==2.1.2",
+    "torchvision==0.16.2",
+]
+
+[tool.setuptools]
+package-dir = { "" = "." }
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["configs/**/*"]
+
+[tool.uv.sources]
+pysaliency = { git = "https://github.com/matthias-k/pysaliency", rev = "58f5d6d8deb827e61de8035ac27001bd61505197" }
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+lint.select = ["E", "W", "F"]
+lint.extend-select = ["I"]
+lint.ignore = ["F722"]

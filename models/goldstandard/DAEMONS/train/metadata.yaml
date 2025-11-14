@@ -1,0 +1,19 @@
+tags:
+- models/goldstandard/DAEMONS/train/v2.0.0
+- models/goldstandard/DAEMONS/train/v2
+- models/goldstandard/DAEMONS/train
+- deepgaze-vs-scenewalk
+- mkuemmerer31
+- galvani
+- autoslurm
+- autoslurm:restart_failed
+
+projects:
+- deepgaze-vs-scenewalk
+
+origin: deepgaze-vs-scenewalk/models/goldstandard/DAEMONS/train
+path: deepgaze-vs-scenewalk/models/goldstandard/DAEMONS/train
+
+versions:
+- version: v2.0.0
+  comment: Now with spatial saliency model as additional mixture component

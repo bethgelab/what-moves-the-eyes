@@ -1,0 +1,112 @@
+Bootstrap: docker
+From: nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
+
+%files
+
+    requirements.txt /opt/
+    install-packages.R /opt/
+
+%post
+
+    # --- OS dependencies ---
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+
+    apt-get install -yq --no-install-recommends \
+        ca-certificates \
+        dropbear \
+        ffmpeg \
+        git \
+        less \
+        locales \
+        nano \
+        openssh-client \
+        rsync \
+        unzip \
+        wget \
+
+
+    # packages needed for development and management
+    apt-get install -yq -qq --no-install-recommends \
+        silversearcher-ag \
+        g++ \
+        git \
+        htop \
+        less \
+        make \
+        mc \
+        ncdu \
+        unzip \
+        vim \
+        pkg-config \
+        libjpeg-dev \
+        libhdf5-dev
+
+
+    wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.550/quarto-1.4.550-linux-amd64.deb -O /tmp/quarto-1.4.550-linux-amd64.deb \
+        && dpkg -i /tmp/quarto-1.4.550-linux-amd64.deb \
+        && rm /tmp/quarto-1.4.550-linux-amd64.deb
+
+    # --- R ---
+    DEBIAN_FRONTEND=noninteractive apt-get install -yq -qq --no-install-recommends \
+        cmake \
+        gfortran \
+        libjpeg-dev \
+        liblapack-dev \
+        libopenblas-dev \
+        lsb-release \
+        software-properties-common
+
+    # required for the rpy2 python package
+    DEBIAN_FRONTEND=noninteractive apt-get install -yq -qq --no-install-recommends \
+        libbz2-dev \
+        liblzma-dev \
+        libpcre2-dev \
+        libpcre++-dev \
+        libicu-dev \
+        libdeflate-dev
+
+    # from https://gcore.com/learning/how-to-install-r-on-ubuntu/
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+
+    apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yq -qq --no-install-recommends \
+    r-base
+
+    Rscript /opt/install-packages.R
+    rm /opt/install-packages.R
+
+    # --- Miniconda ---
+    # See https://repo.anaconda.com/miniconda/ for version information
+    export CONDA_PATH="/opt/conda"
+    export PATH="$CONDA_PATH/bin:$PATH"
+    export MINICONDA_RELEASE="Miniconda3-py311_23.5.2-0-Linux-x86_64.sh"
+    export MINICONDA_CHECKSUM="634d76df5e489c44ade4085552b97bebc786d49245ed1a830022b0b406de5817"
+
+    cd /tmp
+    wget --quiet https://repo.anaconda.com/miniconda/$MINICONDA_RELEASE
+    echo "$MINICONDA_CHECKSUM  $MINICONDA_RELEASE" | sha256sum --check --status
+    /bin/bash $MINICONDA_RELEASE -f -b -p $CONDA_PATH
+    rm $MINICONDA_RELEASE
+
+    export PATH=$CONDA_PATH/bin:$PATH
+
+    pip install --no-cache -r /opt/requirements.txt
+    rm /opt/requirements.txt
+
+    pip install --no-cache "jax[cuda12]==0.4.35"
+    pip install --no-cache numpyro==0.15.3
+    pip install --no-cache equinox==0.11.8
+    pip install --no-cache optax==0.2.3
+
+
+
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+    locale-gen "en_US.UTF-8"
+
+%environment
+
+    export CONDA_PATH="/opt/conda"
+    export PATH=$CONDA_PATH/bin:$PATH

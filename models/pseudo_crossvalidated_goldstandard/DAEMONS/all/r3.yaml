@@ -1,0 +1,41 @@
+dependencies:
+  - destination: container.sif
+    find_latest:
+      tags:
+        $glob: containers/default/*
+      projects: deepgaze-vs-scenewalk
+    source: output/container.sif
+
+  - repository: https://github.com/matthias-k/pysaliency.git
+    branch: dev
+    destination: pysaliency
+
+  # - repository: https://github.com/matthias-k/what-moves-the-eyes.git
+  #   destination: what-moves-the-eyes
+
+  # - repository: https://github.com/matthias-k/combined-gaze-datasets.git
+  #   destination: combined-gaze-datasets
+
+  - find_latest:
+      $and:
+        - tags:
+            $glob: "datasets/DAEMONS/*"
+        - tags: "deepgaze-vs-scenewalk"
+    source: output/DAEMONS
+    destination: pysaliency_datasets/DAEMONS
+
+  - find_latest:
+      $and:
+        - tags:
+            $glob: "models/pseudo_crossvalidated_goldstandard/DAEMONS/train/*"
+        - tags: "deepgaze-vs-scenewalk"
+    source: output/pseudo_crossvalidated_gold_standard.hdf5
+    destination: pseudo_crossvalidated_gold_standard_train.hdf5
+
+  - find_latest:
+      $and:
+        - tags:
+            $glob: "models/pseudo_crossvalidated_goldstandard/DAEMONS/validation/*"
+        - tags: "deepgaze-vs-scenewalk"
+    source: output/pseudo_crossvalidated_gold_standard.hdf5
+    destination: pseudo_crossvalidated_gold_standard_validation.hdf5

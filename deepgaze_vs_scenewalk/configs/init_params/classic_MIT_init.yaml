@@ -1,0 +1,8 @@
+_convert_: all
+omegaAttention: 15
+omfrac: 10
+sigmaAttention: 10
+sigmaInhib: 9
+gamma: 2.0
+inhibStrength: 1
+zeta: -3
