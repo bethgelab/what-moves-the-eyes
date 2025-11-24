@@ -9,3 +9,6 @@ __pycache__/
 *.pyz
 *.pywz
 *.pyzz
+
+.pysaliency_datasets/
+output/
