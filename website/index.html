@@ -18,9 +18,7 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="Bethge Lab">
-  <!-- TODO: Same as paper title above -->
   <meta property="og:title"
     content="What Moves the Eyes: Doubling Mechanistic Model Performance Using Deep Networks to Discover and Test Cognitive Hypotheses">
   <meta property="og:description"
@@ -41,11 +39,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:site" content="@bethgelab">
+  <meta name="twitter:creator" content="@fededagos">
   <meta name="twitter:title"
     content="What Moves the Eyes: Doubling Mechanistic Model Performance Using Deep Networks to Discover and Test Cognitive Hypotheses">
   <meta name="twitter:description"
@@ -64,6 +59,7 @@
   <meta name="citation_author" content="Kümmerer, Matthias">
   <meta name="citation_publication_date" content="2024">
   <meta name="citation_conference_title" content="NeurIPS 2025">
+  <!-- TODO: Replace with your paper PDF URL -->
   <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
 
   <!-- Additional SEO -->
@@ -281,7 +277,8 @@
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
                       </span>
-                      <span>arXiv</span>
+                      <!-- TODO: Remove coming soon once added -->
+                      <span>arXiv (coming soon)</span>
                     </a>
                   </span>
                 </div>
@@ -292,25 +289,6 @@
       </div>
     </section>
 
-
-    <!-- Teaser video-->
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-          <!-- TODO: Replace with your teaser video -->
-          <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-            <!-- TODO: Add your video file path here -->
-            <source src="static/videos/banner_video.mp4" type="video/mp4">
-          </video>
-          <!-- TODO: Replace with your video description -->
-          <h2 class="subtitle has-text-centered">
-            Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat
-            pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
-          </h2>
-        </div>
-      </div>
-    </section>
-    <!-- End teaser video -->
 
     <!-- Paper abstract -->
     <section class="section hero is-light">
@@ -325,7 +303,7 @@
                 state-of-the-art performance in predicting human scanpaths, their underlying decision processes remain
                 opaque. At an opposite end of the modeling spectrum, cognitively inspired mechanistic models aim to
                 explain scanpath behavior through interpretable cognitive mechanisms but lag far behind in predictive
-                accuracy. In this work, we bridge this gap by using a high-performing deep model--—DeepGaze III--—to
+                accuracy. In this work, we bridge this gap by using a high-performing deep model - DeepGaze III - to
                 discover and test mechanisms that improve a leading mechanistic model, SceneWalk. By identifying
                 individual fixations where DeepGaze III succeeds and SceneWalk fails, we isolate behaviorally meaningful
                 discrepancies and use them to motivate targeted extensions of the mechanistic framework. These include
@@ -343,63 +321,55 @@
     </section>
     <!-- End paper abstract -->
 
-
-    <!-- Image carousel -->
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <!-- TODO: Replace with your research result images -->
-              <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy" />
-              <!-- TODO: Replace with description of this result -->
-              <h2 class="subtitle has-text-centered">
-                First image description.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy" />
-              <h2 class="subtitle has-text-centered">
-                Second image description.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy" />
-              <h2 class="subtitle has-text-centered">
-                Third image description.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy" />
-              <h2 class="subtitle has-text-centered">
-                Fourth image description.
-              </h2>
+    <!-- TL;DR -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">TL;DR</h2>
+            <div class="content has-text-justified">
+              <p>
+                <strong>A systematic fixation-level comparison of a performance-optimized DNN scanpath model and a
+                  mechanistic
+                  cognitive model reveals behaviourally relevant mechanisms that can be added to the mechanistic model
+                  to
+                  substantially improve performance.</strong>
+              </p>
+              <br>
+              <br>
+              <div class="has-text-centered">
+                <figure>
+                  <img src="static/images/figure_1.png" alt="Overview" loading="lazy" style="max-width: 100%;" />
+                  <figcaption>
+                    (a) We systematically compare prediction performances of a mechanistic scanpath model
+                    (SceneWalk) to a high-performing DNN model (DeepGaze III) to find situations that could be
+                    predicted very well but are not by the mechanistic model. Inspecting these extreme cases results
+                    in ideas for effects than can be confirmed through further analyses and give rise to mechanisms
+                    that are added to the mechanistic model. (b) This process yields three new mechanisms that double
+                    SceneWalk's predictive performance on MIT1003, substantially narrowing the explainability gap.
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- End image carousel -->
-
-
+    <!-- End TL;DR -->
 
 
     <!-- Youtube video -->
     <section class="hero is-small is-light">
       <div class="hero-body">
-        <div class="container">
+        <div class="container is-centered has-text-centered">
           <!-- Paper video. -->
           <h2 class="title is-3">Video Presentation</h2>
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-
               <div class="publication-video">
-                <!-- TODO: Replace with your YouTube video ID -->
-                <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0"
-                  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Po8PhnWAWSY?si=qtlLm8jNKlBEdEEH" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
               </div>
             </div>
           </div>
@@ -409,22 +379,152 @@
     <!-- End youtube video -->
 
 
+    <!-- Introduction -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+
+              <p>
+                Science often faces a choice:
+                <br>
+                Build models primarily designed to predict, or models that compactly explain. But what if we used them
+                in
+                synergy?
+                <br>
+                <br>
+
+                Our paper tackles this head-on. We combine a deep network (DeepGaze III) with an interpretable
+                mechanistic
+                model (SceneWalk).
+                <br>
+                <br>
+
+                💡 Our idea: Use the deep model not just to chase performance, but as a tool for scientific discovery.
+                <br>
+                We isolate "controversial fixations" where DeepGaze's likelihood vastly exceeds SceneWalk's.
+                These reveal where the mechanistic model fails to capture predictable patterns.
+
+              </p>
+              <br>
+
+              <div class="has-text-centered">
+                <figure>
+                  <img src="static/images/figure_2.png" alt="Controversial fixations" loading="lazy"
+                    style="max-width: 100%;" />
+                  <figcaption>
+                    Controversial Fixations: Those fixations in the dataset where SceneWalk loses most
+                    performance compared to DeepGaze III in terms of LLD or WLLD. Numbers on top of predictions
+                    indicate the achieved log-likelihood relative to a uniform model for the fixation in question.
+                  </figcaption>
+                </figure>
+              </div>
+              <br>
+              <br>
+              <p>
+                From these systematic failures, we isolated three critical mechanisms SceneWalk was missing.
+                The data pointed to known cognitive principles, but revealed critical new nuances.
+                Our method showed us not just what was missing, but how to formulate it to match human behavior. 👇
+              </p>
+            </div>
+            <br>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--End introduction -->
 
 
-    <!-- Paper poster -->
+    <!-- Image carousel -->
     <section class="hero is-small is-light">
       <div class="hero-body">
-        <div class="container">
-          <h2 class="title">Poster</h2>
-
-          <!-- TODO: Replace with your poster PDF -->
-          <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">New mechanisms</h2>
+          <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img src="static/images/figure_3.png" alt="Time-dependent temperature scaling" loading="lazy"
+                  style="max-width: 60%;" />
+                <h2 class="subtitle has-text-centered">
+                  Time dependent temperature scaling. We found that DeepGaze shows higher confidence
+                  (less entropy) early on (a) and predicts fixations in more salient locations (b) in agreement with the
+                  empirical data. SceneWalk is not showing this effect. To address this, we introduced fixation-index-
+                  dependent temperature scaling (c), modeled with exponential decay (d), which improves predictions
+                  for both early and late fixations (e).
+                </h2>
+              </div>
+              <div class="item">
+                <!-- Your image here -->
+                <img src="static/images/figure_4.png" alt="Saccadic momentum" loading="lazy" style="max-width: 60%;" />
+                <h2 class="subtitle has-text-centered">
+                  Saccadic momentum: Controversial fixations suggested that DeepGaze sometimes prefers
+                  saccades to continue in the same direction. We confirmed such a saccadic momentum effect especially
+                  after long saccades (a) and later in scanpaths (b). These effects remain even after controlling for
+                  the distribution of salient objects (dashed lines), indicating a genuine directional bias. We added a
+                  saccadic momentum and return mechanism to SceneWalk (c) modulated by previous saccade length
+                  (d) and fixation index (e), improving predictions for "ongoing saccades" controversial fixations (f).
+                </h2>
+              </div>
+              <div class="item">
+                <!-- Your image here -->
+                <img src="static/images/figure_5.png" alt="Cardinal attention bias" loading="lazy"
+                  style="max-width: 60%;" />
+                <h2 class="subtitle has-text-centered">
+                  Horizontal and left-wards attention bias: Controversial fixations suggested that DeepGaze
+                  predicts early saccades to go to the left. This is indeed the case in the data (a) and the DeepGaze
+                  predictions (b). The effect persists when DeepGaze is run with uniform saliency maps (c) while
+                  SceneWalk (d) shows a too weak effect that increases over time. Therefore, we added a cardinal
+                  attention bias to SceneWalk, than can additionally have a left-asymmetry (e) and can adapt over time
+                  (f, g). This improves predictions on the relevant controversial fixations (f).
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <!--End paper poster -->
+    <!-- End image carousel -->
+
+    <!-- Results -->
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Results</h2>
+            <div class="content has-text-justified">
+              <p>
+                These 3 mechanisms double SceneWalk's explained variance on the MIT1003 dataset (from 35 % → 70 %)! We
+                closed over 56 % of the gap to deep networks, setting a new State-of-the-Art for mechanistic scanpath
+                prediction.
+
+                <br>
+
+                Conceptually: Deep neural networks should be viewed as scientific instruments. They tell us what is
+                predictable in human behavior.
+
+                We then use that information to ask why, building fully interpretable models that approach the
+                performance of their black-box counterparts.
+              </p>
+              <br>
+              <br>
+              <div class="has-text-centered">
+                <figure>
+                  <img src="static/images/figure_6.png" alt="Results" loading="lazy" style="max-width: 100%;" />
+                  <figcaption>
+                    Contributions of the different added mechanisms on the MIT1003 and DAEMONS datasets.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Results -->
 
 
 

@@ -1,0 +1,14 @@
+# Prior format is: mean, std, lower_bound, upper_bound.
+_convert_: all
+omegaAttention: [8, 3, 1.0e-8, 100]
+omfrac: [10, 2, 1.0e-8, 1000]
+sigmaAttention: [6, 5, 1.0e-8, 30]
+sigmaInhib: [6, 2, 1.0e-8, 30]
+omega_prevloc_frac: [10, 2, 1.0e-8, 1000]
+omegaInhib: [7, 2, 1.0e-8, 100]
+gamma: [1, 3, 1.0e-8, 5]
+inhibStrength: [0.3, 1, 1.0e-8, 2]
+zeta: [-2, 1, -5, 0]
+sigmaShift: [4, 2, 1.0e-8, 30]
+shift_size: [0.5, 2, 1.0e-8, 3]
+ompfactor: [-1.2, 1, -5, 0]
